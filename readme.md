@@ -39,7 +39,8 @@ or if the file size exceeds the limit set.  The 'err' argument to the callback w
 - completed: This callback will be called once the XHR readyState indicates the request is
 complete.  The status code and responseText are passed in as parameters
 
-* Note on Safari:
+
+*Note on Safari:*
 
 Unfortunately, I was unable to find a way with Safari's implementation of XHR and the File API to
 pass additional data parameters as part of the POST message.  So, as a fallback, any additional
