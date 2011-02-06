@@ -1,0 +1,1 @@
+jQuery.dropload allows for drag-n-drop file uploading from browsers that support the HTML5 drag-n-drop API and the HTML5 File API.  Currently that means FireFox 3.6, Chrome and Safari 5.

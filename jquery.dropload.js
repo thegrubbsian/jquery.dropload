@@ -99,8 +99,6 @@
             });
         }
         
-        // This also presents some issues in Rails.  Surprisingly to access this
-        // you'll have to pull the first 'key' off the params hash.
 		xhr.send(file);
     }
     
