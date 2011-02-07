@@ -10,6 +10,9 @@ Example:
 		data: { any: "extra", data: "you", want: "to pass" },
         paramName: "postedfile",
 		maxFileSize: 1,
+		started: function(file) {
+			alert("Started uploading file:" + file.name);
+		},
 		error: function(err) {
 			if (err == "notSupported") {
 				alert("Unfortunately, your browser does not support the HTML5 File API.");
@@ -35,9 +38,13 @@ access the file data on the server
 - maxFileSize: the file size limit in megabytes, defaults to 1
 - erorr: This callback will be called if either the browser does not support the HTML5 File API
 or if the file size exceeds the limit set.  The 'err' argument to the callback will be either
-'notSupported' or 'fileToLarge'
+'notSupported' or 'fileToLarge'.
+- started: This callback will be called before the request has begun but after the browser has
+acquired the file and will receive the file as an argument
 - completed: This callback will be called once the XHR readyState indicates the request is
-complete.  The status code and responseText are passed in as parameters
+complete.  The status code and responseText are passed in as parameters.  Note that the error
+callback does not handle HTTP error codes it just indicates that the request cannot be made,
+the completed callback should be used to catch status codes indicating failure.
 
 
 ###Note on Safari:

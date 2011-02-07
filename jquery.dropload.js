@@ -4,6 +4,7 @@
         url: "",
         paramName: "",
         data: null,
+        started: function() {},
         error: function() {},
         completed: function() {}, // Fires when XHR is complete, passes XHR status and responseText
         maxFileSize: 1 // Mb
@@ -31,6 +32,7 @@
         file = e.dataTransfer.files[0];
         
         if (!validate(file)) { return stop(e); }
+        if (options.started) { options.started(file); }
         
         if (window.FileReader) { // FireFox and Chrome
 			prepareWithFileReader(file); 
