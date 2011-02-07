@@ -28,7 +28,7 @@ Example:
     });
 
 As you can see it's pretty simple to set up.  The plugin assumes that it will only bind to one
-element on the page so errors may occur if more than one element match the initial selector.  The
+element on the page (which is the drop target) so errors may occur if more than one element match the initial selector.  The
 options are pretty straightforward:
 
 - url: The address where you want the form to be posted
